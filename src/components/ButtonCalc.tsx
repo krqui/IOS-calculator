@@ -2,20 +2,20 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
 interface Props {
-    texto: string,
+    text: string,
     color?: string,
     ancho?: boolean,
-    accion: (numeroTexto: string) => void
+    action: (numberInText: string) => void
 }
-const ButtonCalc = ({ texto, color = "#2D2D2D", ancho = false, accion }: Props) => {
+const ButtonCalc = ({ text, color = "#2D2D2D", ancho = false, action }: Props) => {
     return (
-        <TouchableOpacity onPress={() => accion(texto)}>
+        <TouchableOpacity onPress={() => action(text)}>
             <View style={{
                 ...styles.boton,
                 backgroundColor: color,
                 width: (ancho) ? 180 : 80
             }}>
-                <Text style={{ ...styles.botonTexto, color: (color === '#9B9B9B') ? 'black' : 'white' }}>{texto}</Text>
+                <Text style={{ ...styles.botontext, color: (color === '#9B9B9B') ? 'black' : 'white' }}>{text}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginHorizontal: 10
     },
-    botonTexto: {
+    botontext: {
         textAlign: "center",
         padding: 10,
         fontSize: 30,
